@@ -32,10 +32,10 @@
       <p class="visor__rotulo">Turno en atención</p>
 
       <!-- HUECO 1: este párrafo necesita un id -->
-      <p class="visor__numero">— — —</p>
+      <p id="visornumero" class="visor__numero">— — —</p>
 
       <!-- HUECO 2: este párrafo necesita un id -->
-      <p class="visor__modulo">Esperando llamado</p>
+      <p id="visorModulo" class="visor__modulo">Esperando llamado</p>
     </section>
 
     <!-- ============================================================
@@ -53,6 +53,7 @@
         <label class="panel__etiqueta" for="buscador">Buscar en la fila</label>
         <!-- HUECO 3: este input necesita un id -->
         <input
+        id="buscador"
           class="panel__input"
           type="text"
           placeholder="Número de turno o documento">
@@ -61,7 +62,7 @@
       <div class="panel__conteo">
         <p class="conteo">
           <!-- HUECO 4: este span necesita un id -->
-          <span class="conteo__cifra">0</span>
+          <span id="contadorFila" class="conteo__cifra">0</span>
           <span class="conteo__texto">en espera</span>
         </p>
       </div>
@@ -79,7 +80,7 @@
       </div>
 
       <!-- HUECO 5: esta lista necesita un id -->
-      <ul class="fila__lista"></ul>
+      <ul id="listaEspera" class="fila__lista"></ul>
 
       <p class="fila__vacia" id="mensajeVacio">No hay turnos cargados.</p>
     </section>
@@ -93,3 +94,8 @@
   <script src="./app.js"></script>
 </body>
 </html>
+
+<!-- ¿Por qué el id va en el HTML y no en el CSS ni en JS?
+ porque es un atributo que nos permitira conectar el js con el html
+ ¿Qué otro atributo del HTML ya conoces que también sirva para identificar elementos,
+ y en que sediferencian?-->
