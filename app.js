@@ -21,6 +21,7 @@ const mensajeVacio=document.getElementById("mensajeVacio");
 
 function pintarfila() {
     const listaEspera=document.getElementById("listaEspera");
+    turnos.length = 0;
     for (let i = 0; i < turnos.length; i++) {
         const nuevoItem = document.createElement("li");
         
