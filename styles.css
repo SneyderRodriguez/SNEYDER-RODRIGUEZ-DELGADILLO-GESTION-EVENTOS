@@ -1,24 +1,24 @@
 
 :root {
-  /* Naranjas */
-  --verde:          #c8582c;
-  --verde-oscuro:   #e9663a;
+  /* Azules */
+  --verde:          #00377A;
+  --verde-oscuro:   #0057BE;
   --verde-suave:    #FDE4D3;
 
   /* Neutros */
   --fondo:          #FBF7F3;
   --papel:          #FFFFFF;
-  --tinta:          #2B1A0F;
-  --tinta-suave:    #6B5344;
+  --tinta:          #EC9949;
+  --tinta-suave:    #DF631B;
   --linea:          #E8DFD6;
   --gris-inactivo:  #F0EBE6;
 
   /*PREGUNTA PUNTO 3*/
   --azulcielo:      #87CEEB; /*PREGUNTA PUNTO 3*/
   /* Señalética */
-  --ambar:          #8A5A00;
+  --ambar:          #7D6559;
   --ambar-suave:    #FDF3DF;
-  --alerta:         #A32B2B;
+  --alerta:         #AF9E96;
 
   /* Tipografía */
   --display: 'Fraunces', Georgia, serif;
