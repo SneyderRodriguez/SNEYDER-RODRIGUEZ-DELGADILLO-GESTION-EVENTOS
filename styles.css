@@ -13,6 +13,8 @@
   --linea:          #E8DFD6;
   --gris-inactivo:  #F0EBE6;
 
+  /*PREGUNTA PUNTO 3*/
+  --azulcielo:      #87CEEB; /*PREGUNTA PUNTO 3*/
   /* Señalética */
   --ambar:          #8A5A00;
   --ambar-suave:    #FDF3DF;
@@ -425,7 +427,7 @@ body {
 /* ---------- Estados que se aplican desde JavaScript ---------- */
 
 .turno--atendido {
-  background: var(--gris-inactivo);
+  background: var(--azulcielo);
 }
 
 .turno--atendido .turno__codigo {
