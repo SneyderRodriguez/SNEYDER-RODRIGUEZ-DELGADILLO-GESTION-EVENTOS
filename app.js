@@ -56,20 +56,22 @@ function pintarFila() {
         nuevoSpan.textContent = turnos[i].codigo;
         nuevoP1.textContent = turnos[i].nombre;
         nuevoP2.textContent = turnos[i].tramite + "  -  " + turnos[i].modulo;
+
         if (turnos[i].atendido) { /**Comparación booleana */
             otroSpan.textContent = "Atendido";
             nuevoItem.classList.add("turno--atendido"); /**PUNTO 3 */
         } else {
             otroSpan.textContent = "En espera";
         }
+
         nuevoItem.dataset.codigo = turnos[i].codigo;/**PUNTO 5 */
         nuevoItem.dataset.modulo = turnos[i].modulo;/**PUNTO 5 */
-        const btnCancelar = document.createElement("button");
-        btnCancelar.classList.add("turno__cancelar");
-        btnCancelar.textContent = "Cancelar";
-        nuevoItem.appendChild(btnCancelar);
-        btnCancelar.dataset.cancelar = "Cancelar";
-        
+
+        const btnCancelar = document.createElement("button");/**PUNTO 6 PARTE 1 */
+        btnCancelar.classList.add("turno__cancelar");/**PUNTO 6 PARTE 1 */
+        btnCancelar.textContent = "cancelar";/**PUNTO 6 PARTE 1 */
+        nuevoItem.appendChild(btnCancelar);/**PUNTO 6 PARTE 1 */
+        btnCancelar.dataset.cancelar = "cancelar";/**PUNTO 6 PARTE 1 */
         listaEspera.appendChild(nuevoItem);
     }
     actualizarContador();/**PUNTO 4 */
@@ -135,3 +137,19 @@ function actualizarContador() {
 * Si te doy un li cualquiera de la pantalla. ¿Cómo sabrías a cuál de los dos objetos del arreglo corresponde?
 * Con ayuda del dataset- guardado?
 * ==================================================================================================*/
+listaEspera.addEventListener("click", function(evento){
+    if (!evento.target.dataset.cancelar) {
+        return;
+    }
+    
+    const turno = evento.target.parentElement;
+    const codigo = turno.dataset.codigo;
+
+    for (let i=0; i<turnos.length; i++) {
+        if (turnos[i].codigo === codigo) {
+            turnos.splice(i,1); /**splice, metodo para modificar 1 elemento en concreto (splice(posicion,cantidad)) */
+            pintarFila();
+            break;
+        }
+    }
+});
