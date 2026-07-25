@@ -24,7 +24,6 @@ function pintarfila() {
     listaEspera.innerHTML = ""; /**innerHTML > elimina el contenido de ese "elemento" */
     for (let i = 0; i < turnos.length; i++) {
         const nuevoItem = document.createElement("li");
-        listaEspera.appendChild(nuevoItem);
         const nuevoSpan = document.createElement("span");
         nuevoItem.appendChild(nuevoSpan);
         const nuevoDiv = document.createElement("div");
@@ -41,6 +40,16 @@ function pintarfila() {
         nuevoDiv.classList.add("turno_datos");
         nuevoP1.classList.add("turno_nombre");
         nuevoP2.classList.add("turno_tramite");
-        otroSpan.classList.add("turno_estado")
+        otroSpan.classList.add("turno_estado");
+
+        nuevoSpan.textContent = turnos[i].codigo;
+        nuevoP1.textContent = turnos[i].nombre;
+        nuevoP2.textContent = turnos[i].tramite + "-" + turnos[i].modulo;
+        if (turnos[i].atendido) { /**Comparación booleana */
+            otroSpan.textContent = "Atendido";
+        }else{
+            otroSpan.textContent = "En espera";
+        }
+        listaEspera.appendChild(nuevoItem);
     }
 }
