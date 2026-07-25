@@ -53,3 +53,4 @@ function pintarfila() {
         listaEspera.appendChild(nuevoItem);
     }
 }
+pintarfila();
