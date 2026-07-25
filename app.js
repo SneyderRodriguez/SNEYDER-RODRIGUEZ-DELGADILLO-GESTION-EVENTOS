@@ -64,9 +64,10 @@ function pintarFila() {
             otroSpan.textContent = "En espera";
         }
 
-        nuevoItem.dataset.codigo = turnos[i].codigo;/**PUNTO 5 */
         nuevoItem.dataset.modulo = turnos[i].modulo;/**PUNTO 5 */
-
+        nuevoItem.dataset.codigo = turnos[i].codigo;/**PUNTO 5 */
+        nuevoItem.dataset.tramite = turnos[i].tramite;/**PARA EL PUNTO 7 */
+        
         const btnCancelar = document.createElement("button");/**PUNTO 6 PARTE 1 */
         btnCancelar.classList.add("turno__cancelar");/**PUNTO 6 PARTE 1 */
         btnCancelar.textContent = "cancelar";/**PUNTO 6 PARTE 1 */
@@ -153,3 +154,28 @@ listaEspera.addEventListener("click", function(evento){
         }
     }
 });
+/*==================================================================================================
+        ¡PARA PENSAR PUNTO 6!
+* ==================================================================================================
+* Eliminaste el objeto del arreglo, pero nunca le digiste a li que desapareciera.
+* ¿Por qué desaparecio de todas formas?
+* porque use el metodo splice indicandole que eliminara el campo que contuviera el nombre database.codigo
+* Si le hubieras puesto un escuhador a cada botón
+* ¿En qué momento exacto habrían dejado de funcionar?
+* Desde el primer momento? entrarian en conflicto cada addEventListener?
+* ==================================================================================================*/
+function aplicarBusqueda() {
+    const texto = buscador.value.toLowerCase();
+    const listaturnos = document.querySelectorAll(".turno");
+    for (let i = 0; i < listaturnos.length; i++) {
+        if ( 
+            listaturnos[i].dataset.codigo.toLowerCase().includes(texto) || 
+            listaturnos[i].dataset.tramite.toLowerCase().includes(texto)
+        ) {
+            listaturnos[i].classList.remove("turno--oculto");
+        }else{
+            listaturnos[i].classList.add("turno--oculto");
+        }
+    }
+}
+buscador.addEventListener("input", aplicarBusqueda);
