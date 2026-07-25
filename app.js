@@ -23,9 +23,9 @@ function pintarfila() {
     const listaEspera = document.getElementById("listaEspera");
     listaEspera.innerHTML = ""; /**innerHTML > elimina el contenido de ese "elemento" */
     for (let i = 0; i < turnos.length; i++) {
-        const nuevoItem = document.createElement("li");
+        const nuevoItem = document.createElement("li"); /**createElement("li") = <li> en HTML */
         const nuevoSpan = document.createElement("span");
-        nuevoItem.appendChild(nuevoSpan);
+        nuevoItem.appendChild(nuevoSpan); /** lo que hacemos es que en nuevoItem <li> agregue la etiqueta nuevoSpan(<span>) */
         const nuevoDiv = document.createElement("div");
         nuevoItem.appendChild(nuevoDiv);
         const nuevoP1 = document.createElement("p");
