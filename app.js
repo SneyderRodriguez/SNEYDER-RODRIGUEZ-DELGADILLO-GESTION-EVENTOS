@@ -1,10 +1,10 @@
-    /*==================================================================================================
-            ¡PARA PENSAR!
-    * ==================================================================================================
-    *Si se va la luz y la pantalla se apaga
-     * ¿La persona del turno A-014 perdió su turno?
-     * NO
-    * ==================================================================================================*/
+/*==================================================================================================
+        ¡PARA PENSAR!
+* ==================================================================================================
+*Si se va la luz y la pantalla se apaga
+ * ¿La persona del turno A-014 perdió su turno?
+ * NO
+* ==================================================================================================*/
 const turnos = [
     { codigo: "S-005", nombre: "Turalyon", tramite: "Solicitud de cita médica general", modulo: "A15", atendido: true },
     { codigo: "S-225", nombre: "Alleria", tramite: "Reclamo de medicamentos", modulo: "B05", atendido: false },
@@ -14,15 +14,15 @@ const turnos = [
     { codigo: "S-0124", nombre: "Nathanos", tramite: "Solicitud de historia clínica", modulo: "F13", atendido: false },/**
     el codigo de 4 digitos es intencional */
 ];
-    /*==================================================================================================
-            ¡PARA PENSAR!
-    * ==================================================================================================
-    *Acabas de escribir seis turnos y guardaste el archivo. Mira la pantalla
-    * ¿Qué ves en la fila de espera? Nada, y ya estaba pensando que hice mal
-    * Si no ves nada, ¿El arreglo existe o no existe? cuando leí esta pregunta: pues si existe
-    * ¿Qué le falta a tu programa para que lo que existe en memoria aparezca en pantalla?
-    * Aquí entendi que hacia falta conectarla
-    * ==================================================================================================*/
+/*==================================================================================================
+        ¡PARA PENSAR!
+* ==================================================================================================
+*Acabas de escribir seis turnos y guardaste el archivo. Mira la pantalla
+* ¿Qué ves en la fila de espera? Nada, y ya estaba pensando que hice mal
+* Si no ves nada, ¿El arreglo existe o no existe? cuando leí esta pregunta: pues si existe
+* ¿Qué le falta a tu programa para que lo que existe en memoria aparezca en pantalla?
+* Aquí entendi que hacia falta conectarla
+* ==================================================================================================*/
 const visornumero = document.getElementById("visornumero");
 const visorModulo = document.getElementById("visorModulo");
 const buscador = document.getElementById("buscador");
@@ -62,18 +62,26 @@ function pintarFila() {
         } else {
             otroSpan.textContent = "En espera";
         }
+        nuevoItem.dataset.codigo = turnos[i].codigo;/**PUNTO 5 */
+        nuevoItem.dataset.modulo = turnos[i].modulo;/**PUNTO 5 */
+        const btnCancelar = document.createElement("button");
+        btnCancelar.classList.add("turno__cancelar");
+        btnCancelar.textContent = "Cancelar";
+        nuevoItem.appendChild(btnCancelar);
+        btnCancelar.dataset.cancelar = "Cancelar";
+        
         listaEspera.appendChild(nuevoItem);
     }
-actualizarContador();/**PUNTO 4 */
+    actualizarContador();/**PUNTO 4 */
 }
 pintarFila();
-    /*==================================================================================================
-            ¡PARA PENSAR!
-    * ==================================================================================================
-    *createElement crea un elemento, pero no aparece en pantalla hasta que usas appendChild.
-    *¿Dónde está el elemento en el momento entre las dos instrucciones? almacenada en la variable
-    *
-    * ==================================================================================================*/
+/*==================================================================================================
+        ¡PARA PENSAR!
+* ==================================================================================================
+*createElement crea un elemento, pero no aparece en pantalla hasta que usas appendChild.
+*¿Dónde está el elemento en el momento entre las dos instrucciones? almacenada en la variable
+*
+* ==================================================================================================*/
 function llamarSiguiente() {
     let haymasturnos = false; /** esta variable pregunta si hay mas turnos pendientes */
     for (let i = 0; i < turnos.length; i++) {
@@ -94,25 +102,36 @@ function llamarSiguiente() {
 btnLlamar.addEventListener("click", llamarSiguiente/*function(){
     llamarSiguiente();
 }*/);
-    /*==================================================================================================
-            ¡PARA PENSAR!
-    * ==================================================================================================
-    *Podrías haber cambiado el color de fondo directamente desde JS
-    * ¿Por qué es mejor agregar una clase? porqué así no tendria que pintar "linea por linea" desde js
-    * Si mañana el cliente pide que los turnos atendidos se vean azules en lugar de grises
-    * ¿Qué archivo tendrias que abrir con cada una de las dos formas?
-    * CSS
-    * ==================================================================================================*/
+/*==================================================================================================
+        ¡PARA PENSAR!
+* ==================================================================================================
+* ¿Qué deberia mostrar el visor cuando ya no queda nadie en la fila? Deberia mostrar la lista vacia
+* Le diste clic varias veces al botón: ¿Porqué el turno llamado no vuelve a salir?
+* por el for junto con el if, donde preguntamos, si hay turnos en espera, cambialos a activo
+* Podrías haber cambiado el color de fondo directamente desde JS
+* ¿Por qué es mejor agregar una clase? porqué así no tendria que pintar "linea por linea" desde js
+* Si mañana el cliente pide que los turnos atendidos se vean azules en lugar de grises
+* ¿Qué archivo tendrias que abrir con cada una de las dos formas?
+* CSS
+* ==================================================================================================*/
 function actualizarContador() {
-    const sigueespera=document.querySelectorAll(".turno:not(.turno--atendido)");
+    const sigueespera = document.querySelectorAll(".turno:not(.turno--atendido)");
     contadorFila.textContent = sigueespera.length;
 }
-    /*==================================================================================================
-            ¡PARA PENSAR!
-    * ==================================================================================================
-    * También podrias haber contado recorriendo el arreglo con un for
-    * ¿Qué diferencia hay entre contar en el arreglo y contar en la pantalla?
-    * RTA: Que el arreglo me contaria todos los elementos que hay dentro?
-    * Imagina que el contador dice 5 pero en pantalla se ven 3 turnos en espera
-    * ¿Cúal de los dos está equivocado, y que habría pasado en tu programa? El contador
-    * ==================================================================================================*/
+/*==================================================================================================
+        ¡PARA PENSAR!
+* ==================================================================================================
+* También podrias haber contado recorriendo el arreglo con un for
+* ¿Qué diferencia hay entre contar en el arreglo y contar en la pantalla?
+* RTA: Que el arreglo me contaria todos los elementos que hay dentro?
+* Imagina que el contador dice 5 pero en pantalla se ven 3 turnos en espera
+* ¿Cúal de los dos está equivocado, y que habría pasado en tu programa? El contador
+* ==================================================================================================*/
+/*==================================================================================================
+        ¡PARA PENSAR PUNTO 5!
+* ==================================================================================================
+* El código del turno ya esta en el arreglo. ¿Para qué guardarlo también dentro del elemento?
+* Seria como una especie de backup, por si se llegara a cambiar la classe o algo por el estilo
+* Si te doy un li cualquiera de la pantalla. ¿Cómo sabrías a cuál de los dos objetos del arreglo corresponde?
+* Con ayuda del dataset- guardado?
+* ==================================================================================================*/
