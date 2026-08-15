@@ -99,8 +99,8 @@ proyecto/
 
 Puedes agregar imágenes.
 
-[![Captura-de-pantalla-2026-07-25-024319.png](https://i.postimg.cc/02N4kDWS/Captura-de-pantalla-2026-07-25-024319.png)](https://postimg.cc/Z01HjBhY)
-[![Captura-de-pantalla-2026-07-25-024331.png](https://i.postimg.cc/c4Jzxw9f/Captura-de-pantalla-2026-07-25-024331.png)](https://postimg.cc/xqW5gJSd)
+[![Gestor-Turnos.png](https://i.ibb.co/NDJTzwn/Gestor-Turnos.png)]
+[![Gestor-Turnos.png](https://i.ibb.co/gLzv5704/Gestor-Turnos-Llamado.png)]
 
 ---
 
