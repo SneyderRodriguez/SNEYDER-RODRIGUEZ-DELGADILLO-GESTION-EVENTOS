@@ -47,13 +47,13 @@ Este proyecto consiste en una pagina web que permite ver los turnos de la sala d
 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/SneyderRodriguez/SNEYDER-RODRIGUEZ-DELGADILLO-GESTION-EVENTOS.git
+git clone https://github.com/SneyderRodriguez/GESTOR-TURNOS.git
 ```
 
 2. Entrar al proyecto
 
 ```bash
-cd GESTION-EVENTOS
+cd GESTOR-TURNOS
 ```
 
 3. Ejecutar
@@ -99,8 +99,8 @@ proyecto/
 
 Puedes agregar imágenes.
 
-[![Gestor-Turnos.png](https://i.ibb.co/NDJTzwn/Gestor-Turnos.png)]
-[![Gestor-Turnos.png](https://i.ibb.co/gLzv5704/Gestor-Turnos-Llamado.png)]
+![Gestor-Turnos.png](https://i.ibb.co/NDJTzwn/Gestor-Turnos.png)
+![Gestor-Turnos.png](https://i.ibb.co/gLzv5704/Gestor-Turnos-Llamado.png)
 
 ---
 
